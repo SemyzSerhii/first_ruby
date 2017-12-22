@@ -23,9 +23,8 @@ class User
   end
 
   def reach?
-    return true if options[:has_villa] || options[:has_mercedes] || options[:is_reach]
-
-    money * currency > 1000
+    has_stuff = options[:has_villa] || options[:has_mercedes] || options[:is_reach]
+    has_stuff || (money * currency > 1000)
   end
 end
 
